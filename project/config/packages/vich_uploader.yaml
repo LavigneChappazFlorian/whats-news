@@ -1,0 +1,11 @@
+vich_uploader:
+    db_driver: orm
+
+    metadata:
+        type: attribute
+
+    mappings:
+        schedules:
+            uri_prefix: /images/schedules
+            upload_destination: '%kernel.project_dir%/public/images/schedules'
+            namer: Vich\UploaderBundle\Naming\SmartUniqueNamer
