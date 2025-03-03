@@ -16,9 +16,17 @@ final class ScheduleController extends AbstractController
         $repository = $em->getRepository(Schedule::class);
         $schedules = $repository->findAll();
 
+        $news_rss = simplexml_load_file('https://www.amiens.fr/flux-rss/actus');
+        $news_result = $news_rss->xpath('channel/item');
+
+        $fun_fact_rss = simplexml_load_file('https://partner-feeds.20min.ch/rss/20minutes/faits-divers');
+        $fun_fact_result = $fun_fact_rss->xpath('channel/item');
+
         return $this->render('schedule/index.html.twig', [
             'controller_name' => 'ScheduleController',
-            'schedules' => $schedules
+            'schedules' => $schedules,
+            'news_result' => $news_result,
+            'fun_fact_result' => $fun_fact_result
         ]);
     }
 }

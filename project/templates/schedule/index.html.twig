@@ -11,9 +11,27 @@
             <img src="{{ vich_uploader_asset(schedule, 'imageFile') }}" alt="{{ schedule.title }}">
         {% endfor %}
         </div>
-        <div class="feature"><i class="fas fa-layer-group"></i> <p>MANY REUSABLE ELEMENTS</p></div>
-        <div class="feature"><i class="fas fa-gem"></i> <p>RESPONSIVE LAYOUT</p></div>
-        <div class="feature"><i class="fas fa-share-alt"></i> <p>CLEAN MODERN CODE</p></div>
+        <div class="feature">
+        {% for flux in fun_fact_result|slice(1, 1) %}
+            <h2>{{ flux.title }}</h2>
+            <p>{{ flux.description }}</p>
+            <small>Publié le {{ flux.pubDate|date('d-m-Y') }}</small>
+        {% endfor %}
+        </div>
+        <div class="feature">
+        {% for flux in news_result|slice(0, 1) %}
+            <h2>{{ flux.title }}</h2>
+            <p>{{ flux.description }}</p>
+            <small>Publié le {{ flux.pubDate|date('d-m-Y') }}</small>
+        {% endfor %}
+        </div>
+        <div class="feature">
+        {% for flux in news_result|slice(1, 1) %}
+            <h2>{{ flux.title }}</h2>
+            <p>{{ flux.description }}</p>
+            <small>Publié le {{ flux.pubDate|date('d-m-Y') }}</small>
+        {% endfor %}
+        </div>
     </div>
 </div>
 {% endblock %}
