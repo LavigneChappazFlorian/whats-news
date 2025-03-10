@@ -4,6 +4,7 @@ namespace App\Form;
 
 use App\Entity\Schedule;
 use Symfony\Component\Form\AbstractType;
+use Symfony\Component\Form\Extension\Core\Type\DateType;
 use Symfony\Component\Form\Extension\Core\Type\FileType;
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 use Symfony\Component\Form\FormBuilderInterface;
@@ -15,7 +16,10 @@ class ScheduleType extends AbstractType
     {
         $builder
             ->add('title')
-            ->add('imageFile', FileType::class)
+            ->add('day')
+            ->add('date', DateType::class)
+            ->add('morning')
+            ->add('afternoon')
             ->add('save', SubmitType::class, [
                 'label' => 'Envoyer'
             ])

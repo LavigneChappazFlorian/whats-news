@@ -12,8 +12,12 @@
     <h1>Dashboard</h1>
 
     {% for schedule in schedules %}
-        <h2>{{ schedule.title }}</h2>
-        <img src="{{ vich_uploader_asset(schedule, 'imageFile') }}" alt="{{ schedule.title }}">
+    <div class="container">
+        <h2>Modifier l’image</h2>
+        <img id="preview" src="default-image.jpg" alt="Aperçu">
+        <input type="file" id="imageInput" accept="image/*" onchange="previewImage(event)">
+        <button onclick="saveImage()">Sauvegarder</button>
+    </div>
     {% endfor %}
 </div>
 {% endblock %}

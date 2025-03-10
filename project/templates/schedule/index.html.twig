@@ -12,24 +12,24 @@
         {% endfor %}
         </div>
         <div class="feature">
-        {% for flux in fun_fact_result|slice(1, 1) %}
+        {% for flux in fun_fact_result|slice(0, 1) %}
             <h2>{{ flux.title }}</h2>
             <p>{{ flux.description }}</p>
-            <small>Publié le {{ flux.pubDate|date('d-m-Y') }}</small>
+            <small>Publié le {{ flux.pubDate|date('d-m-Y') }} - 20 minutes</small>
         {% endfor %}
         </div>
         <div class="feature">
         {% for flux in news_result|slice(0, 1) %}
             <h2>{{ flux.title }}</h2>
             <p>{{ flux.description }}</p>
-            <small>Publié le {{ flux.pubDate|date('d-m-Y') }}</small>
+            <small>Publié le {{ flux.pubDate|date('d-m-Y') }} - amiens.fr</small>
         {% endfor %}
         </div>
         <div class="feature">
         {% for flux in news_result|slice(1, 1) %}
             <h2>{{ flux.title }}</h2>
             <p>{{ flux.description }}</p>
-            <small>Publié le {{ flux.pubDate|date('d-m-Y') }}</small>
+            <small>Publié le {{ flux.pubDate|date('d-m-Y') }} - amiens.fr</small>
         {% endfor %}
         </div>
     </div>

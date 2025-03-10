@@ -15,10 +15,13 @@ final class DashboardController extends AbstractController
 {
     #[IsGranted("ROLE_ADMIN")]
     #[Route('/dashboard', name: 'app_dashboard')]
-    public function index(): Response
+    public function index(EntityManagerInterface $em): Response
     {
+        $repository = $em->getRepository(Schedule::class);
+        $schedules = $repository->findAll();
+
         return $this->render('dashboard/index.html.twig', [
-            'controller_name' => 'DashboardController',
+            'schedules' => $schedules,
         ]);
     }
 

@@ -4,6 +4,7 @@
     box-sizing: border-box;
     font-family: Arial, sans-serif;
 }
+
 .container {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
@@ -11,6 +12,7 @@
     width: 100vw;
     height: 100vh;
 }
+
 .feature {
     display: flex;
     flex-direction: column;
@@ -23,10 +25,22 @@
     position: relative;
     color: white;
 }
-.feature:nth-child(1) { background: #D0021B; }
-.feature:nth-child(2) { background: #005F73; }
-.feature:nth-child(3) { background: #EFB700; }
-.feature:nth-child(4) { background: #00A896; }
+
+.feature:nth-child(1) {
+    background: #D0021B;
+}
+
+.feature:nth-child(2) {
+    background: #005F73;
+}
+
+.feature:nth-child(3) {
+    background: #EFB700;
+}
+
+.feature:nth-child(4) {
+    background: #00A896;
+}
 
 .feature img {
     width: 100%;
@@ -35,4 +49,66 @@
     position: absolute;
     top: 0;
     left: 0;
+}
+
+
+/* Login Page */
+.login-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+    height: 100vh;
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.login-container h2 {
+    color: white;
+    font-size: 2rem;
+}
+
+.input-group {
+    margin-bottom: 1rem;
+    text-align: left;
+}
+
+.input-group label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+    color: white;
+}
+
+.input-group input {
+    width: 100%;
+    padding: 0.75rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.btn {
+    display: block;
+    width: 100%;
+    padding: 0.75rem;
+    background: #667eea;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    cursor: pointer;
+}
+
+.btn:hover {
+    background: #5a67d8;
+}
+
+.login-container a {
+    text-decoration: none;
+    color: white;
+}
+
+.login-container a:hover {
+    text-decoration: underline;
 }
