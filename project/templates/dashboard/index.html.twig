@@ -12,6 +12,7 @@
             <h3>{{ schedule.day }} {{ schedule.date |format_datetime('medium', 'none', locale: 'fr')}}</h3>
             <p><strong>Matin : </strong>{{ schedule.morning}}</p>
             <p><strong>Après-midi : </strong>{{ schedule.morning}}</p>
+            <a href="{{ path('app_dashboard_edit', {id: schedule.id}) }}">Modifier</a>
         </div>
         {% endfor %}
     </div>

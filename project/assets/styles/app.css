@@ -142,5 +142,15 @@ h2 {
 }
 
 .schedule-item p {
-    margin: 0.25rem 0;
+    margin: .5rem 0 .5rem 0;
+}
+
+.schedule-item a {
+    font-size: 1rem;
+    text-decoration: none;
+    color: #667eea;
+}
+
+.schedule-item a:hover {
+    text-decoration: underline;
 }

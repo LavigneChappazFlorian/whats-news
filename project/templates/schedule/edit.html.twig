@@ -1,12 +1,12 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Ajouter un emploi du temps{% endblock %}
+{% block title %}Modifier l'emploi du temps{% endblock %}
 
 {% block body %}
 
 <div class="schedule-container">
-    <h2>Ajouter un emploi du temps</h2>
-    <form method="POST">
+    <h2>Emploi du temps - {{ schedule.date |format_datetime('medium', 'none', locale: 'fr')}}</h2>
+    <form action="{{ path('app_dashboard_edit', {id: schedule.id}) }}" method="POST">
         {{ form_start(form) }}
         <div class="input-group">
             <label for="title">Titre</label>
@@ -28,7 +28,7 @@
             <label for="afternoon">Après-midi</label>
             {{ form_widget(form.afternoon) }}
         </div>
-        <button type="submit" class="btn">Envoyer</button>
+        <button type="submit" class="btn">Enregistrer</button>
         {{ form_end(form) }}
     </form>
 </div>
