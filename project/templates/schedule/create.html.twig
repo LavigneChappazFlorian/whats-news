@@ -3,14 +3,33 @@
 {% block title %}Hello ScheduleController!{% endblock %}
 
 {% block body %}
-<style>
-    .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
-    .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
-</style>
 
-<div class="example-wrapper">
-    <h1>Ajouter un emploi du temps</h1>
-
-    {{ form(form) }}
+<div class="schedule-container">
+    <h2>Ajouter un emploi du temps</h2>
+    <form method="POST">
+        {{ form_start(form) }}
+        <div class="input-group">
+            <label for="title">Titre</label>
+            {{ form_widget(form.title) }}
+        </div>
+        <div class="input-group">
+            <label for="day">Jour</label>
+            {{ form_widget(form.day) }}
+        </div>
+        <div class="input-group">
+            <label for="date">Date</label>
+            {{ form_widget(form.date) }}
+        </div>
+        <div class="input-group">
+            <label for="morning">Matin</label>
+            {{ form_widget(form.morning) }}
+        </div>
+        <div class="input-group">
+            <label for="afternoon">Après-midi</label>
+            {{ form_widget(form.afternoon) }}
+        </div>
+        <button type="submit" class="btn">Envoyer</button>
+        {{ form_end(form) }}
+    </form>
 </div>
 {% endblock %}

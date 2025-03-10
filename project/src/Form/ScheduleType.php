@@ -20,9 +20,6 @@ class ScheduleType extends AbstractType
             ->add('date', DateType::class)
             ->add('morning')
             ->add('afternoon')
-            ->add('save', SubmitType::class, [
-                'label' => 'Envoyer'
-            ])
         ;
     }
 

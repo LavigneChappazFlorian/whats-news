@@ -23,7 +23,6 @@ final class ScheduleController extends AbstractController
         $fun_fact_result = $fun_fact_rss->xpath('channel/item');
 
         return $this->render('schedule/index.html.twig', [
-            'controller_name' => 'ScheduleController',
             'schedules' => $schedules,
             'news_result' => $news_result,
             'fun_fact_result' => $fun_fact_result

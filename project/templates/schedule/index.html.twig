@@ -8,7 +8,11 @@
     <div class="container">
         <div class="feature">
         {% for schedule in schedules %}
-            <img src="{{ vich_uploader_asset(schedule, 'imageFile') }}" alt="{{ schedule.title }}">
+        <div class="schedule-item">
+            <h3>{{ schedule.day }} {{ schedule.date |format_datetime('medium', 'none', locale: 'fr')}}</h3>
+            <p><strong>Matin : </strong>{{ schedule.morning}}</p>
+            <p><strong>Après-midi : </strong>{{ schedule.morning}}</p>
+        </div>
         {% endfor %}
         </div>
         <div class="feature">

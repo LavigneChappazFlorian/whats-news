@@ -3,17 +3,17 @@
 {% block title %}Dashboard - Emplois du temps{% endblock %}
 
 {% block body %}
-<style>
-    .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
-    .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
-</style>
 
-<div class="example-wrapper">
-    <h1>Dashboard</h1>
-
-    {% for schedule in schedules %}
-        <h2>{{ schedule.title }}</h2>
-        <img src="{{ vich_uploader_asset(schedule, 'imageFile') }}" alt="{{ schedule.title }}">
-    {% endfor %}
+<div class="dashboard-container">
+    <h2>Tableau de bord - Emplois du temps</h2>
+    <div class="schedule-list">
+        {% for schedule in schedules %}
+        <div class="schedule-item">
+            <h3>{{ schedule.day }} {{ schedule.date |format_datetime('medium', 'none', locale: 'fr')}}</h3>
+            <p><strong>Matin : </strong>{{ schedule.morning}}</p>
+            <p><strong>Après-midi : </strong>{{ schedule.morning}}</p>
+        </div>
+        {% endfor %}
+    </div>
 </div>
 {% endblock %}
