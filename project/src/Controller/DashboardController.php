@@ -66,4 +66,14 @@ final class DashboardController extends AbstractController
             'form' => $form->createView(),
         ]);
     }
+
+    #[Route('/dashboard/{id}/delete', name: 'app_dashboard_delete', requirements: ['id' => '\d+'])]
+    public function delete(ScheduleRepository $scheduleRepository, EntityManagerInterface $em, int $id): Response
+    {
+        $schedule = $scheduleRepository->find($id);
+        $em->remove($schedule);
+        $em->flush();
+
+        return $this->redirectToRoute('app_dashboard');
+    }
 }

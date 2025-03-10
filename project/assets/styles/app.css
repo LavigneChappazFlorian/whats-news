@@ -30,7 +30,7 @@
     background: linear-gradient(135deg, #667eea, #764ba2);
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
     color: black;
-    font-size: 1.2rem;
+    font-size: 1.1rem;
 }
 
 .feature:nth-child(2) {
@@ -145,12 +145,21 @@ h2 {
     margin: .5rem 0 .5rem 0;
 }
 
-.schedule-item a {
+.schedule-btn {
+    margin-top: 1rem;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+}
+
+.schedule-btn a {
     font-size: 1rem;
     text-decoration: none;
     color: #667eea;
 }
 
-.schedule-item a:hover {
+.schedule-btn a:hover {
     text-decoration: underline;
 }
