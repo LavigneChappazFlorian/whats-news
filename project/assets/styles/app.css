@@ -196,3 +196,16 @@
 .schedule-btn a:hover {
     text-decoration: underline;
 }
+
+/* Reset password */ 
+small {
+    color: white;
+}
+
+.reset-password p {
+    color: white;
+}
+
+.reset-password a {
+    color: #667eea;
+}

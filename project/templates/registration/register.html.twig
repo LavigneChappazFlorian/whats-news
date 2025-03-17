@@ -3,22 +3,37 @@
 {% block title %}Register{% endblock %}
 
 {% block body %}
-    {% for flash_error in app.flashes('verify_email_error') %}
-        <div class="alert alert-danger" role="alert">{{ flash_error }}</div>
-    {% endfor %}
+{% for flash_error in app.flashes('verify_email_error') %}
+<div class="alert alert-danger" role="alert">{{ flash_error }}</div>
+{% endfor %}
 
-    <h1>Register</h1>
+<div class="login-container">
+    <h2>Créer un utilisateur</h2>
+    <form method="POST">
+        {{ form_start(registrationForm) }}
+        {{ form_errors(registrationForm) }}
 
-    {{ form_errors(registrationForm) }}
+        <div class="input-group">
+            <label for="text">Nom</label>
+            {{ form_widget(registrationForm.firstname) }}
+        </div>
+        <div class="input-group">
+            <label for="text">Prénom</label>
+            {{ form_widget(registrationForm.lastname) }}
+        </div>
+        <div class="input-group">
+            <label for="email">Email</label>
+            {{ form_widget(registrationForm.email) }}
+        </div>
+        <div class="input-group">
+            <label for="password">Mot de passe</label>
+            {{ form_widget(registrationForm.plainPassword) }}
+        </div>
+        <input type="hidden" name="_csrf_token" value="{{ csrf_token('authenticate') }}">
+        <button type="submit" class="btn">Créer</button>
+        {{ form_end(registrationForm) }}
+    </form>
 
-    {{ form_start(registrationForm) }}
-        {{ form_row(registrationForm.firstname) }}
-        {{ form_row(registrationForm.lastname) }}
-        {{ form_row(registrationForm.email) }}
-        {{ form_row(registrationForm.plainPassword, {
-            label: 'Password'
-        }) }}
-
-        <button type="submit" class="btn">Register</button>
-    {{ form_end(registrationForm) }}
+    <a href="/login">Déjà un compte ?</a>
+</div>
 {% endblock %}
