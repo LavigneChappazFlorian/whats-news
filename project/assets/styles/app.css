@@ -33,6 +33,10 @@
     font-size: 1.1rem;
 }
 
+.splide {
+    width: 100%;
+}
+
 .feature:nth-child(2) {
     background: linear-gradient(135deg, #FF5733, #FF8D1A);
 }
@@ -119,8 +123,16 @@
 
 
 /* Dashboard */
-h2 {
+.dashboard-container h2 {
     color: white;
+}
+
+.dashboard-container a:nth-child(3) {
+    text-decoration: none;
+    color: #5a67d8;
+    background: white;
+    border-radius: 2rem;
+    padding: .5rem;
 }
 
 .schedule-list {
@@ -134,6 +146,10 @@ h2 {
     border-radius: 5px;
     box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
     text-align: left;
+}
+
+.visible {
+    opacity: 1;
 }
 
 .schedule-item h3 {

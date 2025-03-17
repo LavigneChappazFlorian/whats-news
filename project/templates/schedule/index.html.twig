@@ -1,42 +1,50 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Hello ScheduleController!{% endblock %}
+{% block title %}Informations du jour{% endblock %}
 
 {% block body %}
 <div class="container">
     <div class="features">
-    <div class="container">
-        <div class="feature">
-        {% for schedule in schedules %}
-        <div class="schedule-item">
-            <h3>{{ schedule.day }} {{ schedule.date |format_datetime('medium', 'none', locale: 'fr')}}</h3>
-            <p><strong>Matin : </strong>{{ schedule.morning}}</p>
-            <p><strong>Après-midi : </strong>{{ schedule.morning}}</p>
+        <div class="container">
+            <div class="feature">
+                <section class="splide" aria-label="Splide Basic HTML Example">
+                    <div class="splide__track">
+                        <ul class="splide__list">
+                            {% for schedule in schedules %}
+                            <li class="splide__slide">
+                                <div class="schedule-item">
+                                    <h3>{{ schedule.day }} {{ schedule.date |format_datetime('medium', 'none', locale: 'fr')}}</h3>
+                                    <p><strong>Matin : </strong>{{ schedule.morning}}</p>
+                                    <p><strong>Après-midi : </strong>{{ schedule.morning}}</p>
+                                </div>
+                            </li>
+                            {% endfor %}
+                        </ul>
+                    </div>
+                </section>
+            </div>
+            <div class="feature">
+                {% for flux in fun_fact_result|slice(0, 1) %}
+                <h2>{{ flux.title }}</h2>
+                <p>{{ flux.description }}</p>
+                <small>Publié le {{ flux.pubDate|date('d-m-Y') }} - 20 minutes</small>
+                {% endfor %}
+            </div>
+            <div class="feature">
+                {% for flux in news_result|slice(0, 1) %}
+                <h2>{{ flux.title }}</h2>
+                <p>{{ flux.description }}</p>
+                <small>Publié le {{ flux.pubDate|date('d-m-Y') }} - amiens.fr</small>
+                {% endfor %}
+            </div>
+            <div class="feature">
+                {% for flux in news_result|slice(1, 1) %}
+                <h2>{{ flux.title }}</h2>
+                <p>{{ flux.description }}</p>
+                <small>Publié le {{ flux.pubDate|date('d-m-Y') }} - amiens.fr</small>
+                {% endfor %}
+            </div>
+
         </div>
-        {% endfor %}
-        </div>
-        <div class="feature">
-        {% for flux in fun_fact_result|slice(0, 1) %}
-            <h2>{{ flux.title }}</h2>
-            <p>{{ flux.description }}</p>
-            <small>Publié le {{ flux.pubDate|date('d-m-Y') }} - 20 minutes</small>
-        {% endfor %}
-        </div>
-        <div class="feature">
-        {% for flux in news_result|slice(0, 1) %}
-            <h2>{{ flux.title }}</h2>
-            <p>{{ flux.description }}</p>
-            <small>Publié le {{ flux.pubDate|date('d-m-Y') }} - amiens.fr</small>
-        {% endfor %}
-        </div>
-        <div class="feature">
-        {% for flux in news_result|slice(1, 1) %}
-            <h2>{{ flux.title }}</h2>
-            <p>{{ flux.description }}</p>
-            <small>Publié le {{ flux.pubDate|date('d-m-Y') }} - amiens.fr</small>
-        {% endfor %}
-        </div>
-        
     </div>
-</div>
-{% endblock %}
+    {% endblock %}
