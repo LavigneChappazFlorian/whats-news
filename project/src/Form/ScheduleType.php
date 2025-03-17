@@ -18,8 +18,10 @@ class ScheduleType extends AbstractType
             ->add('title')
             ->add('day')
             ->add('date', DateType::class)
-            ->add('morning')
-            ->add('afternoon')
+            ->add('morning_subject')
+            ->add('morning_teacher')
+            ->add('afternoon_subject')
+            ->add('afternoon_teacher')
         ;
     }
 

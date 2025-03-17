@@ -13,9 +13,18 @@
                             {% for schedule in schedules %}
                             <li class="splide__slide">
                                 <div class="schedule-item">
-                                    <h3>{{ schedule.day }} {{ schedule.date |format_datetime('medium', 'none', locale: 'fr')}}</h3>
-                                    <p><strong>Matin : </strong>{{ schedule.morning}}</p>
-                                    <p><strong>Après-midi : </strong>{{ schedule.morning}}</p>
+                                    <h3>{{ schedule.day }} {{ schedule.date |format_datetime('medium', 'none', locale:
+                                        'fr')}}</h3>
+                                    <div class="item">
+                                        <h3>Matin</h3>
+                                        <p><strong>Matière :</strong> {{ schedule.morningSubject }}</p>
+                                        <p><strong>Prof associé(e) :</strong> {{ schedule.morningTeacher }}</p>
+                                    </div>
+                                    <div class="item">
+                                        <h3>Après-midi</h3>
+                                        <p><strong>Matière :</strong> {{ schedule.afternoonSubject }}</p>
+                                        <p><strong>Prof associé(e) :</strong> {{ schedule.afternoonTeacher }}</p>
+                                    </div>
                                 </div>
                             </li>
                             {% endfor %}

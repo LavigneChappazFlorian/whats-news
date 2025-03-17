@@ -21,12 +21,24 @@
             {{ form_widget(form.date) }}
         </div>
         <div class="input-group">
-            <label for="morning">Matin</label>
-            {{ form_widget(form.morning) }}
+            <div>
+                <label for="morning">Matin - Matière</label>
+                {{ form_widget(form.morning_subject) }}
+            </div>
+            <div>
+                <label for="morning">Matin - Professeur associé(e)</label>
+                {{ form_widget(form.morning_teacher) }}
+            </div>
         </div>
         <div class="input-group">
-            <label for="afternoon">Après-midi</label>
-            {{ form_widget(form.afternoon) }}
+            <div>
+                <label for="morning">Après-midi - Matière</label>
+                {{ form_widget(form.afternoon_subject) }}
+            </div>
+            <div>
+                <label for="morning">Après-midi - Professeur associé(e)</label>
+                {{ form_widget(form.afternoon_teacher) }}
+            </div>
         </div>
         <button type="submit" class="btn">Enregistrer</button>
         {{ form_end(form) }}

@@ -25,10 +25,16 @@ class Schedule
     private ?\DateTimeInterface $date = null;
 
     #[ORM\Column(length: 255)]
-    private ?string $morning = null;
+    private ?string $morning_subject = null;
 
     #[ORM\Column(length: 255)]
-    private ?string $afternoon = null;
+    private ?string $afternoon_subject = null;
+
+    #[ORM\Column(length: 255)]
+    private ?string $morning_teacher = null;
+
+    #[ORM\Column(length: 255)]
+    private ?string $afternoon_teacher = null;
 
     public function getId(): ?int
     {
@@ -71,26 +77,50 @@ class Schedule
         return $this;
     }
 
-    public function getMorning(): ?string
+    public function getMorningSubject(): ?string
     {
-        return $this->morning;
+        return $this->morning_subject;
     }
 
-    public function setMorning(string $morning): static
+    public function setMorningSubject(string $morning_subject): static
     {
-        $this->morning = $morning;
+        $this->morning_subject = $morning_subject;
 
         return $this;
     }
 
-    public function getAfternoon(): ?string
+    public function getAfternoonSubject(): ?string
     {
-        return $this->afternoon;
+        return $this->afternoon_subject;
     }
 
-    public function setAfternoon(string $afternoon): static
+    public function setAfternoonSubject(string $afternoon_subject): static
     {
-        $this->afternoon = $afternoon;
+        $this->afternoon_subject = $afternoon_subject;
+
+        return $this;
+    }
+
+    public function getMorningTeacher(): ?string
+    {
+        return $this->morning_teacher;
+    }
+
+    public function setMorningTeacher(string $morning_teacher): static
+    {
+        $this->morning_teacher = $morning_teacher;
+
+        return $this;
+    }
+
+    public function getAfternoonTeacher(): ?string
+    {
+        return $this->afternoon_teacher;
+    }
+
+    public function setAfternoonTeacher(string $afternoon_teacher): static
+    {
+        $this->afternoon_teacher = $afternoon_teacher;
 
         return $this;
     }
